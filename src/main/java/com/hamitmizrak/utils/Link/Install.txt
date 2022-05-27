@@ -1,0 +1,34 @@
+
+Register
+GitHub         ==> https://github.com/join
+Oracle         ==> https://profile.oracle.com/myprofile/account/create-account.jspx
+
+#########################################################################################
+Google Chrome  ==> https://www.google.com/intl/tr_tr/chrome/
+Notepad++      ==> https://notepad-plus-plus.org/downloads/
+JDK Download   ==> https://download.oracle.com/java/18/latest/jdk-18_windows-x64_bin.exe
+Git            ==> https://git-scm.com/download/win
+GitHub Private ==> https://classroom.github.com/a/q8qdvRRg
+Anydesk        ==> https://anydesk.com/tr
+
+Intellij IDEA  ==> https://www.jetbrains.com/idea/download/#section=windows
+
+Mysql          ==> https://dev.mysql.com/downloads/mysql/
+
+#########################################################################################
+Ödev Gönderme
+
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TechCareerBackEndSpringBoot1/...
+git push -u origin main
+
+
+#########################################################################################
+Ödev Göndereceğim zaman
+git add .
+git commit -m "first commit"
+git push -u origin main
