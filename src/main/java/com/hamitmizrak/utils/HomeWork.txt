@@ -1,0 +1,21 @@
+JAVA
+#######################################################################
+JVM nedir ?
+JRE nedir ?
+JDK  nedir ?
+interpreter nedir ?
+compiler nedir ?
+
+JPA
+#######################################################################
+none update create, create-drop, validate bu özellikler nelerdir ?
+
+
+GİT
+#######################################################################
+.gitignore ?
+merge nedir ?
+rebase nedir ?
+stash nedir ?
+conflict nedir ?
+
