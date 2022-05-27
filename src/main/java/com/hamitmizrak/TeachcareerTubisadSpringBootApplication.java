@@ -17,5 +17,4 @@ public class TeachcareerTubisadSpringBootApplication {
         // AWT: JOptionPanel set ayarı
         System.setProperty("java.awt.headless", "false");
     }
-
 }
