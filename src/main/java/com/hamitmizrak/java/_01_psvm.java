@@ -16,6 +16,7 @@ public class _01_psvm {
         int i1 = 62;
         long l1 = 56865156L;
 
+
         //binary = 2 (0-1)
         float f2 = 114.525f;
         double d2 = 1551.55;
