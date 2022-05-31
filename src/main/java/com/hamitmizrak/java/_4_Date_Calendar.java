@@ -24,9 +24,6 @@ public class _4_Date_Calendar {
         String value2=simpleDateFormat.format(date2.getTime());
         System.out.println(value2);
 
-
-        //Calendar
-
     }
 
 }
