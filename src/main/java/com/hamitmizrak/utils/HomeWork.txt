@@ -1,10 +1,27 @@
 JAVA
 #######################################################################
+SOLID nedir ?
+Design pattern (Singleton design pattern)
+Database => Normalization (1NF,2NF,3NF,BCNF)
+
+
 JVM nedir ?
 JRE nedir ?
 JDK  nedir ?
 interpreter nedir ?
 compiler nedir ?
+Java ÖZellikleri ?
+api ?
+ide ?
+cast nedir ?
+ascii code unicode
+null != 0
+new ==> Ram bizim bir yer ayırıyor
+Stack memory , Heap Memory
+
+StringBuilder StringTokenizer
+
+
 
 JPA
 #######################################################################
