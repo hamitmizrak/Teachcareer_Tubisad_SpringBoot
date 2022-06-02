@@ -1,0 +1,10 @@
+@SpringBootApplication
+
+
+--Bean
+@Bean
+@Configuration
+
+@Controller
+@GetMapping("/bean")
+@ResponseBody
