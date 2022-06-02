@@ -1,0 +1,7 @@
+h2{
+    background-color: darkblue;
+    color:white;
+    font-size: 2rem;
+    box-shadow: 1px 1px 1px 3px rgba(0,0,0,0.8);
+    border:1px solid white;
+}
