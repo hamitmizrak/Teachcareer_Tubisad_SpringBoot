@@ -14,6 +14,9 @@ public class TeachcareerTubisadSpringBootApplication {
     public static void main(String[] args) {
         SpringApplication.run(TeachcareerTubisadSpringBootApplication.class, args);
 
+        //DevTools
+        System.setProperty("spring.devtools.restart.enabled","true");
+
         // AWT: JOptionPanel set ayarı
         System.setProperty("java.awt.headless", "false");
     }
