@@ -1,0 +1,28 @@
+
+Java -8 gelen özellikler ==> Ekrem (2 Haziran 2022)
+
+
+#############################################################
+
+Compiler Error - Runtime Error ==> Ahmet (2 Haziran 2022)
+
+
+#############################################################
+#############################################################
+
+JDK - JRE nedir ve aralarında farklar ?  (Zahid)
+
+#############################################################
+
+JVM nedir ? bileşenleri nelerdir ? (Alper)
+
+
+#############################################################
+Stack Memory -Heap Memory nedir ? aralarındaki farklar ? (Ayşe)
+
+#############################################################
+XML nedir ? JSON nedir ?  (İsmail)
+
+#############################################################
+Framework - Libraries nedir  ?  (Serhat)
+
