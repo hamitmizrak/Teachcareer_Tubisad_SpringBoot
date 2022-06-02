@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class BeanController {
+public class MainController {
 
     @Autowired
     StudentBean studentBean;
@@ -19,5 +19,13 @@ public class BeanController {
     public StudentDto getBean(){
         return studentBean.studentDto();
     }
+
+    /////////////////////////////////
+    //http://localhost:8080/thymeleaf1
+    @GetMapping("/thymeleaf1")//url
+    public String getTymeleaf1(){
+        return "thymeleaf_page"; //html
+    }
+
 
 }
