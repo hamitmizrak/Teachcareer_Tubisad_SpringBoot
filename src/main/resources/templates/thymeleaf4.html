@@ -10,31 +10,31 @@
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
-    <!--
-    <link rel="stylesheet"   th:href="@{/css/style.css}">
-    <script th:src="@{/js/template.js}"></script>
-    -->
+    <!--<link rel="stylesheet"   th:href="@{/css/style.css}">
+    <script th:src="@{/js/template.js}"></script>-->
 </head>
 
 <body class="container bg-dark text-white">
 <!-- start codes -->
-<h2 class="display-2 mt-5 mb-5">Student List</h2>
-<table class="table table-hover table-striped table-light table-responsive">
+
+<p class="display-5">Table</p>
+<table class="table table-hover table-striped table-dark">
     <thead>
-        <tr>
-            <th th:text="#{student_id}" ></th>
-            <th th:text="#{student_name}" ></th>
-            <th th:text="#{student_surname}" ></th>
+        <tr class="bg-primary">
+            <th th:text="#{studentId}" ></th>
+            <th th:text="#{studentName}" ></th>
+            <th th:text="#{studentSurname}" ></th>
         </tr>
     </thead>
     <tbody>
-        <tr th:each="list:${key_controller}">
-            <td th:text="${list.studentId}"></td>
-            <td th:text="${list.studentName}"></td>
-            <td th:text="${list.studentSurname}"></td>
+        <tr th:each="stu:${key_controller}">
+            <td th:text="${stu.studentId}" ></td>
+            <td th:text="${stu.studentName}" ></td>
+            <td th:text="${stu.studentSurname}" ></td>
         </tr>
     </tbody>
 </table>
+
 
 
 <!-- ends codes -->
