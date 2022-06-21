@@ -1,4 +1,3 @@
-alert("deneme")
 
 
 let date = () => {

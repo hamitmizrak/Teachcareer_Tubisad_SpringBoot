@@ -90,7 +90,7 @@ p{
 
 /* header */
 header{
-    background-image: url("images/header.jpg");
+    background-image: url("../images/header.jpg");
     background-size: cover;
     background-position: 50% 50%;
     z-index:-1;
