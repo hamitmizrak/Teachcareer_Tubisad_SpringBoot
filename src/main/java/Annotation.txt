@@ -8,3 +8,8 @@
 @Controller
 @GetMapping("/bean")
 @ResponseBody
+
+git reset HEAD~1
+git add .
+git commit -m "commit"
+git push --force
