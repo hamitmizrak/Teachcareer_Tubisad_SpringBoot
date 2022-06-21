@@ -25,5 +25,4 @@ public class ProductDto {
     @NotEmpty(message = "ürün fiyatı boş geçilemez")
     private String productPrice;
 
-
 }

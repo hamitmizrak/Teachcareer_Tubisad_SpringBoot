@@ -13,43 +13,40 @@
 
 <body class="container bg-dark text-white">
 
-<!--
-productName
-productTrade
-productPrice
--->
-
 <p class="text-primary text-uppercase bordered">Product</p>
 <!-- start codes -->
+<!--
 <form th:action="@{/product}" th:method="post" th:object="${product_key}">
     <div class="container">
         <div class="row">
             <div class="col-md-2 mb3">Ürün Adı</div>
-            <div class="col-md-10">
+            <div class="col-md-10 mb3">
                 <input id="productName" th:field="*{productName}" type="text" placeholder="Adı" autofocus class="form-control"/>
                 <div th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}"   class="text-danger"></div>
             </div>
-
-            <div class="col-md-2 me-3">Ürün Marka</div>
-            <div class="col-md-10">
+            <br/>
+            <div class="col-md-2 mb3">Ürün Marka</div>
+            <div class="col-md-10 mb3">
                 <input id="productTrade" th:field="*{productTrade}" type="text" placeholder="marka" autofocus class="form-control"/>
                 <div th:if="${#fields.hasErrors('productTrade')}" th:errors="*{productTrade}"   class="text-danger"></div>
             </div>
+            <br/>
 
-            <div class="col-md-2 me-3">Ürün Fiyatı</div>
-            <div class="col-md-10">
+            <div class="col-md-2 mb3">Ürün Fiyatı</div>
+            <div class="col-md-10 mb3">
                 <input id="productPrice" th:field="*{productPrice}" type="text" placeholder="Fiyatı" autofocus class="form-control"/>
                 <div th:if="${#fields.hasErrors('productPrice')}" th:errors="*{productPrice}"   class="text-danger"></div>
             </div>
-
-            <div class="col-md-2 mb-3"></div>
-            <div class="col-md-10">
+            <br/>
+            <div class="col-md-2 mb3"></div>
+            <div class="col-md-10 mb3">
                 <button type="reset" class="btn btn-danger">Temizle</button>
                 <button type="submit" class="btn btn-primary">Gönder</button>
             </div>
         </div>
     </div>
 </form>
+-->
 
 
 <!-- ends codes -->
