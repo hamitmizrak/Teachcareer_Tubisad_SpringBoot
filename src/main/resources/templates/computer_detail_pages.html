@@ -43,31 +43,30 @@
 <body class="container bg-dark text-white">
 <!-- start codes -->
 
-<h2 class="display-4 text-uppercase text-center mt-5 mb-5">Controller Spring MVC Spring DATA</h2>
-<table class="table table-hover table-striped table-responsive table-dark">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>COMPUTER NAME</th>
-        <th>COMPUTER PRICE</th>
-        <th>DATE</th>
-        <th>View</th>
-        <th>Update</th>
-        <th>Delete</th>
-    </tr>
-    <tbody>
-    <tr  th:each="list:${computer_key}">
-        <td th:text="${list.id}"></td>
-        <td th:text="${list.computerName}"></td>
-        <td th:text="${list.computerPrice}"></td>
-        <td th:text="${list.createdDate}"></td>
-        <td><a th:href="@{/find/computer/{id}(id=${list.id})}"><i class="fa-solid fa-binoculars text-warning"></i></a></td>
-        <td><a href="#!"><i class="fa-solid fa-wrench text-primary"></i></a></td>
-        <td><a th:href="@{/delete/computer/{id}(id=${list.id})}"><i class="fa-regular fa-trash-can text-danger"></i></a></td>
-    </tr>
-    </tbody>
-    </thead>
-</table>
+<h2 class="display-4 text-uppercase text-center mt-5 mb-5">Detail Page</h2>
+<a href="/list/computer" class="btn btn-primary">List Pages</a>
+
+<h5 th:text="${computer_details}"></h5>
+
+<div class="container">
+      <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                  <div class="card">
+                        <img class="card-img-top" src="../static/images/coffee-g4d61840d9_1920.jpg" alt="Title">
+                        <div class="card-body">
+                              <h4 class="card-title">Computer</h4>
+                              <p class="card-text">Computer ID</p>
+                              <p class="card-text">Computer Name</p>
+                              <p class="card-text">Price</p>
+                              <p class="card-text">Date</p>
+                        </div>
+                  </div>
+            </div>
+            <div class="col-md"></div>
+      </div>
+</div>
+
 
 <!-- ends codes -->
 <!-- Bootstrap JavaScript Libraries -->

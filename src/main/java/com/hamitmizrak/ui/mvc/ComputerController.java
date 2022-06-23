@@ -44,13 +44,14 @@ public class ComputerController {
     //find
     //http://localhost:8080/find/computer/1
     @GetMapping("find/computer/{id}")
-    @ResponseBody
-    public String findComputerById(@PathVariable(name="id") Long id){
-       Optional<ComputerEntity> entity=   repository.findById(id);
-       if(entity.isPresent()){
-           return "bulundu:  "+entity.get();
-       }
-        return id+ " id bulunmadı";
+    public String findComputerById(@PathVariable(name="id") Long id,Model model){
+        Optional<ComputerEntity> entity=   repository.findById(id);
+        if(entity.isPresent()){
+            model.addAttribute("computer_details",entity.get());
+        }else{
+            model.addAttribute("computer_details","failed");
+        }
+        return "computer_detail_pages";
     }
 
     //Liste
@@ -58,10 +59,10 @@ public class ComputerController {
     @GetMapping("list/computer")
     @ResponseBody
     public List<ComputerEntity> listComputer(){
-      Iterable<ComputerEntity> listem= repository.findAll();
-      for(ComputerEntity temp:listem){
-          log.info(temp);
-      }
+        Iterable<ComputerEntity> listem= repository.findAll();
+        for(ComputerEntity temp:listem){
+            log.info(temp);
+        }
         return (List<ComputerEntity>) listem;
     }
 
@@ -81,8 +82,8 @@ public class ComputerController {
     public String deleteComputerById(@PathVariable(name="id") Long id,Model model){
         Optional<ComputerEntity>  optionalEntity=  repository.findById(id);
         if(optionalEntity.isPresent()){
-             repository.deleteById(id);
-             model.addAttribute("computer_delete_success",optionalEntity.get());
+            repository.deleteById(id);
+            model.addAttribute("computer_delete_success",optionalEntity.get());
         }else{
             model.addAttribute("failed","Silinmedi");
         }
