@@ -23,22 +23,12 @@ import java.util.Date;
 //entity
 @Entity
 @Table(name = "computer")
-public class ComputerEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "computer_id",updatable = false)
-    private Long id;
+public class ComputerEntity extends BaseEntity {
 
     @Column(name="computer_name",length = 250)
     private String computerName;
 
     @Column(name="computer_price")
     private double computerPrice;
-
-    @Column(name="created_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreationTimestamp
-    private Date createdDate;
 
 }
