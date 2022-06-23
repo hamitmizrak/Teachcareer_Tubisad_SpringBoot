@@ -5,8 +5,10 @@ import com.hamitmizrak.data.repository.IComputerRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -21,9 +23,10 @@ public class ComputerController {
     @GetMapping("save/computer")
     @ResponseBody
     public String saveComputer(){
-        ComputerEntity entity=ComputerEntity.builder().computerName("Bilgisayar adı").computerPrice(15).build();
-        repository.save(entity);
-        log.info("Computer saved "+entity);
+        for (int i = 1; i <=10 ; i++) {
+            ComputerEntity entity=ComputerEntity.builder().computerName("Bilgisayar adı: "+i).computerPrice(i*10).build();
+            repository.save(entity);
+        }
         return "computer saved";
     }
 
@@ -43,11 +46,33 @@ public class ComputerController {
     @GetMapping("find/computer/{id}")
     @ResponseBody
     public String findComputerById(@PathVariable(name="id") Long id){
-       Optional<ComputerEntity>  entity=   repository.findById(id);
+       Optional<ComputerEntity> entity=   repository.findById(id);
        if(entity.isPresent()){
            return "bulundu:  "+entity.get();
        }
         return id+ " id bulunmadı";
+    }
+
+    //Liste
+    //http://localhost:8080/list/computer
+    @GetMapping("list/computer")
+    @ResponseBody
+    public List<ComputerEntity> listComputer(){
+      Iterable<ComputerEntity> listem= repository.findAll();
+      for(ComputerEntity temp:listem){
+          log.info(temp);
+      }
+        return (List<ComputerEntity>) listem;
+    }
+
+    //Liste
+    //http://localhost:8080/list/controller/computer
+    @GetMapping("list/controller/computer")
+    public String listComputerController(Model model){
+        Iterable<ComputerEntity> listem= repository.findAll();
+        model.addAttribute("computer_key",listem);
+        log.info(listem);
+        return  "controller_list";
     }
 
     //delete
