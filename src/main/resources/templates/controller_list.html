@@ -56,14 +56,14 @@
             <th>Delete</th>
         </tr>
     <tbody>
-        <tr  th:each="mvc_data_list:${computer_key}">
-            <td th:text="${mvc_data_list.id}"></td>
-            <td th:text="${mvc_data_list.computerName}"></td>
-            <td th:text="${mvc_data_list.computerPrice}"></td>
-            <td th:text="${mvc_data_list.createdDate}"></td>
+        <tr  th:each="list:${computer_key}">
+            <td th:text="${list.id}"></td>
+            <td th:text="${list.computerName}"></td>
+            <td th:text="${list.computerPrice}"></td>
+            <td th:text="${list.createdDate}"></td>
             <td><a href="#!"><i class="fa-solid fa-binoculars text-warning"></i></a></td>
             <td><a href="#!"><i class="fa-solid fa-wrench text-primary"></i></a></td>
-            <td><a href="#!"><i class="fa-regular fa-trash-can text-danger"></i></a></td>
+            <td><a th:href="@{/delete/computer/{id}(id=${list.id})}"><i class="fa-regular fa-trash-can text-danger"></i></a></td>
         </tr>
     </tbody>
     </thead>

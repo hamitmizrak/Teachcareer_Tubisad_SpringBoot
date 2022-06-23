@@ -78,14 +78,15 @@ public class ComputerController {
     //delete
     //http://localhost:8080/delete/computer/1
     @GetMapping("delete/computer/{id}")
-    @ResponseBody
-    public String deleteComputerById(@PathVariable(name="id") Long id){
+    public String deleteComputerById(@PathVariable(name="id") Long id,Model model){
         Optional<ComputerEntity>  optionalEntity=  repository.findById(id);
         if(optionalEntity.isPresent()){
-            repository.deleteById(id);
-            return "bulundu ve silindi:  "+optionalEntity.get();
+             repository.deleteById(id);
+             model.addAttribute("computer_delete_success",optionalEntity.get());
+        }else{
+            model.addAttribute("failed","Silinmedi");
         }
-        return id+ " id bulunmadı";
+        return "redirect:/list/controller/computer";
     }
 
     //update
