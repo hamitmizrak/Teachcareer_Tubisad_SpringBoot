@@ -1,4 +1,4 @@
-package com.hamitmizrak.controller;
+package com.hamitmizrak.ui.mvc;
 
 import com.hamitmizrak.dto.ProductDto;
 import lombok.extern.log4j.Log4j2;

@@ -1,4 +1,4 @@
-package com.hamitmizrak.controller;
+package com.hamitmizrak.ui.mvc;
 
 import com.hamitmizrak.dto.ProductDto;
 import org.springframework.stereotype.Controller;
