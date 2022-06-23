@@ -33,10 +33,10 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <!-- External CSS -->
-<link rel="stylesheet"   th:href="@{/css/style.css}">
+<!--<link rel="stylesheet"   th:href="@{/css/style.css}">-->
 
 <!-- External JS -->
-<script th:src="@{/js/template.js}"></script>
+<!--<script th:src="@{/js/template.js}"></script>-->
 
 </head>
 
@@ -44,29 +44,26 @@
 <!-- start codes -->
 
 <h2 class="display-4 text-uppercase text-center mt-5 mb-5">Detail Page</h2>
-<a href="/list/computer" class="btn btn-primary">List Pages</a>
-
-<h5 th:text="${computer_details}"></h5>
+<a href="" class="btn btn-primary">List Pages</a>
 
 <div class="container">
       <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                   <div class="card">
-                        <img class="card-img-top" src="../static/images/coffee-g4d61840d9_1920.jpg" alt="Title">
-                        <div class="card-body">
+                        <img class="card-img-top" th:src="@{/images/header.jpg}" alt="Title">
+                        <div class="card-body bg-primary text-white">
                               <h4 class="card-title">Computer</h4>
-                              <p class="card-text">Computer ID</p>
-                              <p class="card-text">Computer Name</p>
-                              <p class="card-text">Price</p>
-                              <p class="card-text">Date</p>
+                              ID: <p th:text="${computer_details.id}" class="card-text"></p>
+                              NAME:<p th:text="${computer_details.computerName}" class="card-text"></p>
+                              PRICE:<p th:text="${computer_details.computerPrice}" class="card-text"></p>
+                              DATE:<p th:text="${computer_details.createdDate}" class="card-text"></p>
                         </div>
                   </div>
             </div>
             <div class="col-md"></div>
       </div>
 </div>
-
 
 <!-- ends codes -->
 <!-- Bootstrap JavaScript Libraries -->
