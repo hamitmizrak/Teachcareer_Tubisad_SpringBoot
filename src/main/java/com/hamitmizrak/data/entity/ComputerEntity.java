@@ -18,6 +18,8 @@ import java.util.Date;
 @Builder
 @Log4j2
 
+//http://localhost:8080/h2-console
+
 //entity
 @Entity
 @Table(name = "computer")
