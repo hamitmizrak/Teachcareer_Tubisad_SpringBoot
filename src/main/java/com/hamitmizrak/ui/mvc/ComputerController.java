@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +30,8 @@ public class ComputerController {
         }
         return "computer saved";
     }
+
+
 
     //save: @RequestParam
     //http://localhost:8080/save/computer2?name=msi
@@ -79,11 +82,14 @@ public class ComputerController {
     //delete
     //http://localhost:8080/delete/computer/1
     @GetMapping("delete/computer/{id}")
-    public String deleteComputerById(@PathVariable(name="id") Long id,Model model){
+    public String deleteComputerById(@PathVariable(name="id") Long id,Model model,RedirectAttributes redirectAttributes){
         Optional<ComputerEntity>  optionalEntity=  repository.findById(id);
         if(optionalEntity.isPresent()){
-            repository.deleteById(id);
+
+            redirectAttributes.addFlashAttribute("flag","showAlert");
             model.addAttribute("computer_delete_success",optionalEntity.get());
+
+            repository.deleteById(id);
         }else{
             model.addAttribute("failed","Silinmedi");
         }

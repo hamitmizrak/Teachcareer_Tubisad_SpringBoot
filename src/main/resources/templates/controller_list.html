@@ -38,6 +38,7 @@
 <!-- External JS -->
 <script th:src="@{/js/template.js}"></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="container bg-dark text-white">
@@ -64,11 +65,78 @@
         <td th:text="${list.createdDate}"></td>
         <td><a th:href="@{/find/computer/{id}(id=${list.id})}"><i class="fa-solid fa-binoculars text-warning"></i></a></td>
         <td><a href="#!"><i class="fa-solid fa-wrench text-primary"></i></a></td>
-        <td><a th:href="@{/delete/computer/{id}(id=${list.id})}"><i class="fa-regular fa-trash-can text-danger"></i></a></td>
+        <td><button onclick="deneme()" th:href="@{/delete/computer/{id}(id=${list.id})}"><i class="fa-regular fa-trash-can text-danger"></i></button></td>
     </tr>
     </tbody>
     </thead>
 </table>
+
+
+<script>
+    let deneme=()=>{
+
+//window.location.href = "your/url";
+    swal({
+        title: "Emin misiniz?",
+        text: "Silmek istiyor musunuz!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("silindi!", {
+                    icon: "success",
+
+                });
+            } else {
+                swal("Silinmedi!");
+            }
+        });
+    }
+    //swal("Good job!", "You clicked the button!", "success");
+    // swal("Hello world!");
+
+    // swal("Silmek istiyor musunuz?", {
+    //buttons: ["Hayır!", "Evet!"],
+    //});
+</script>
+
+<script>
+
+    if('${flag}' == 'showAlert'){
+        swal("Are you sure you want to do this?", {
+            buttons: ["Oh noez!", true],
+        });
+    }
+
+/*    swal({
+        title: "Emin misiniz?",
+        text: "Silmek istiyor musunuz!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("silindi!", {
+                    icon: "success",
+                });
+            } else {
+                swal("Silinmedi!");
+            }
+        });*/
+
+    //swal("Good job!", "You clicked the button!", "success");
+    // swal("Hello world!");
+
+    // swal("Silmek istiyor musunuz?", {
+    //buttons: ["Hayır!", "Evet!"],
+    //});
+
+
+</script>
 
 <!-- ends codes -->
 <!-- Bootstrap JavaScript Libraries -->
