@@ -75,7 +75,12 @@
 
                     <td><a th:href="@{/find/flower/{id}(id=${flower.id})}"><i class="fa-solid fa-binoculars text-warning"></i></a></td>
                     <td><a href="#!"><i class="fa-solid fa-wrench text-primary"></i></a></td>
-                    <td><a href="#!" th:href="@{/delete/flower/{id}(id=${flower.id})}"><i class="fa-regular fa-trash-can text-danger"></i></a></td>
+                    <td>
+                        <a
+                            th:href="@{/delete/flower/{id}(id=${flower.id})}"
+                            th:onclick="if(!(confirm('Silmek istediğinden emin misin ?'))) return false"
+
+                    ><i class="fa-regular fa-trash-can text-danger"></i></a></td>
 
                 </tr>
                 </tbody>
