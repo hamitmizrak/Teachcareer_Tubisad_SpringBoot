@@ -36,5 +36,4 @@ public class TeacherController {
         List<TeacherEntity> teacherEntities=  repository.findTeacherEntitiesByTeacherSurname(teacherSurname);
         return teacherEntities;
     }
-
 }
