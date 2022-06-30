@@ -4,10 +4,7 @@ package com.hamitmizrak.business.services.impl;
 import com.hamitmizrak.business.dto.AdminDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,5 +115,55 @@ public class AdminServices {
         return listem;
     }
 
+    //XML Formattar
+    //http://localhost:8080/api/v1/rest/object8
+    @GetMapping(value = "/rest/object8",produces = MediaType.APPLICATION_XML_VALUE)
+    public List<AdminDto> getRest8(){
+        List<AdminDto> listem=new ArrayList<>();
+        for (long i = 1; i <=3 ; i++) {
+            listem.add( AdminDto.builder()
+                    .id(i)
+                    .name("adı "+i)
+                    .surname("soyadı "+i)
+                    .password("Şifre "+i)
+                    .build()
+            );
+        }
+        //console output List Data
+        listem.forEach(System.out::println);
+        return listem;
+    }
+
+
+
+    //RequestParam-1
+    //http://localhost:8080/api/v1/rest/object10?id=44&adi=Hamit
+    @GetMapping(value = "/rest/object10")
+    public AdminDto getRest10(@RequestParam(name="id") Long idim,  @RequestParam(name="adi") String adi){
+        AdminDto adminDto=AdminDto
+                .builder().id(idim)
+                .name(adi)
+                .surname("soyadı44")
+                .password("Şifre44")
+                .build();
+        return adminDto;
+    }
+
+    //RequestParam
+    //http://localhost:8080/api/v1/rest/object11?id=44&adi=Hamit&soyadi=Mızrak
+    //http://localhost:8080/api/v1/rest/object11?id=44&adi=Hamit
+    @GetMapping(value = "/rest/object11")
+    public AdminDto getRest11(
+            @RequestParam(name="id") Long idim,
+            @RequestParam(name="adi") String adi,
+            @RequestParam(name="soyadi",required = false,defaultValue = "soyadı333") String soyadi){
+        AdminDto adminDto=AdminDto
+                .builder().id(idim)
+                .name(adi)
+                .surname(soyadi)
+                .password("Şifre44")
+                .build();
+        return adminDto;
+    }
 
 }
