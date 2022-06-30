@@ -200,4 +200,30 @@ public class AdminServices {
        return ResponseEntity.ok(adminDto);
     }
 
+
+    //http://localhost:8080/api/v1/rest/object14    ==> not found(404)
+    //http://localhost:8080/api/v1/rest/object14/0  ==> bad request(400)
+    //http://localhost:8080/api/v1/rest/object14/44
+    @GetMapping("/rest/object14/{id}")
+    public ResponseEntity<AdminDto> getRest14(@PathVariable (name="id") Long idim){
+        AdminDto adminDto=AdminDto
+                .builder()
+                .id(idim)
+                .name("adı")
+                .surname("soyadı")
+                .password("password")
+                .build();
+
+        //id yazılamamışsa
+        if(idim==null){
+            log.error("404 bulunamadı");
+            return ResponseEntity.notFound().build();
+        }else if(idim==0){
+            log.error("400 bad request");
+            return ResponseEntity.badRequest().build();
+        }
+        log.info(adminDto);
+        return ResponseEntity.ok(adminDto);
+    }
+
 }
