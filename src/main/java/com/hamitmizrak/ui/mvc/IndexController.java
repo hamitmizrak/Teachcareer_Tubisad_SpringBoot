@@ -1,8 +1,6 @@
 package com.hamitmizrak.ui.mvc;
 
-import com.hamitmizrak.dto.ProductDto;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller

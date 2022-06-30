@@ -1,6 +1,6 @@
 package com.hamitmizrak.bean;
 
-import com.hamitmizrak.dto.StudentDto;
+import com.hamitmizrak.business.dto.StudentDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

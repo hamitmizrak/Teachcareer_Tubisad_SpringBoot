@@ -1,7 +1,7 @@
 package com.hamitmizrak.ui.mvc;
 
 import com.hamitmizrak.bean.StudentBean;
-import com.hamitmizrak.dto.StudentDto;
+import com.hamitmizrak.business.dto.StudentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -32,6 +32,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>swal("My title", "My description", "success");</script>
+
 <!-- External CSS -->
 <!--<link rel="stylesheet"   th:href="@{/css/style.css}">-->
 
@@ -72,13 +76,18 @@
                     <td th:text="${flower.flowerType}"></td>
                     <td th:text="${flower.flowerPrice}"></td>
 
-
                     <td><a th:href="@{/find/flower/{id}(id=${flower.id})}"><i class="fa-solid fa-binoculars text-warning"></i></a></td>
-                    <td><a href="#!"><i class="fa-solid fa-wrench text-primary"></i></a></td>
+                    <td><a th:href="@{/update/flower/{id}(id=${flower.id})}"><i class="fa-solid fa-wrench text-primary"></i></a></td>
                     <td>
+                        <!-- <a th:onclick="if(!(confirm('Silmek istediğinden emin misin ?'))) return false"-->
                         <a
                             th:href="@{/delete/flower/{id}(id=${flower.id})}"
                             th:onclick="if(!(confirm('Silmek istediğinden emin misin ?'))) return false"
+
+                            th:onmouseout="swal('Are you sure you want to do this?',
+
+                            { buttons: ['Evet!', true],});
+                        "
 
                     ><i class="fa-regular fa-trash-can text-danger"></i></a></td>
 
@@ -90,6 +99,20 @@
     </div>
 </div>
 
+
+
+<div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+<div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+
+<script>
+    let result=function () {
+
+        swal("Are you sure you want to do this?", {
+            buttons: ["Oh noez!", true],
+        });
+
+    }
+</script>
 
 
 <!-- Bootstrap JavaScript Libraries -->

@@ -1,6 +1,6 @@
 package com.hamitmizrak.ui.mvc;
 
-import com.hamitmizrak.dto.AdminDto;
+import com.hamitmizrak.business.dto.AdminDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

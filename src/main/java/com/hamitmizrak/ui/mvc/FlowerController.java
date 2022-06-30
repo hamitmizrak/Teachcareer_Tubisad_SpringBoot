@@ -1,13 +1,11 @@
 package com.hamitmizrak.ui.mvc;
 
-import com.hamitmizrak.data.entity.ComputerEntity;
 import com.hamitmizrak.data.entity.FlowerEntity;
 import com.hamitmizrak.data.repository.IFlowerRepository;
-import com.hamitmizrak.dto.FlowerDto;
+import com.hamitmizrak.business.dto.FlowerDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -95,6 +93,33 @@ public class FlowerController {
         }else{
             model.addAttribute("failed","Silinmedi");
         }
+        return "redirect:/flower/list";
+    }
+
+    //update
+    //http://localhost:8080/update/flower/2
+    @GetMapping("update/flower/{id}")
+    public String updateFlowerById(@PathVariable(name="id") Long id,FlowerDto flowerDto){
+        Optional<FlowerEntity>  optionalEntity=  repository.findById(id);
+        if(optionalEntity.isPresent()){
+            FlowerEntity entity=optionalEntity.get();
+            entity.setFlowerName(flowerDto.getFlowerName());
+            entity.setFlowerType(flowerDto.getFlowerType());
+            entity.setFlowerPrice(flowerDto.getFlowerPrice());
+            repository.save(entity);
+            log.info("bulundu ve güncellendi:  "+entity);
+        }
+        return "flower_update";
+    }
+
+
+    @GetMapping("/somePostAction")
+    public String somePostAction(Model model, RedirectAttributes redirAttrs) {
+        if (true) {
+            redirAttrs.addFlashAttribute("error", "The error XYZ occurred.");
+            return "redirect:/flower/list";
+        }
+        redirAttrs.addFlashAttribute("success", "Everything went just fine.");
         return "redirect:/flower/list";
     }
 
