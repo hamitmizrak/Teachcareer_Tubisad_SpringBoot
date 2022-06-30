@@ -201,11 +201,12 @@ public class AdminServices {
     }
 
 
-    //http://localhost:8080/api/v1/rest/object14    ==> not found(404)
-    //http://localhost:8080/api/v1/rest/object14/0  ==> bad request(400)
-    //http://localhost:8080/api/v1/rest/object14/44
-    @GetMapping("/rest/object14/{id}")
-    public ResponseEntity<AdminDto> getRest14(@PathVariable (name="id") Long idim){
+
+    //http://localhost:8080/api/v1/rest/object15    ==> not found(404)
+    //http://localhost:8080/api/v1/rest/object15/0  ==> bad request(400)
+    //http://localhost:8080/api/v1/rest/object15/44 ==> success (200)
+    @GetMapping({"/rest/object15","/rest/object15/{id}"})
+    public ResponseEntity<AdminDto> getRest15(@PathVariable (name="id",required = false) Long idim){
         AdminDto adminDto=AdminDto
                 .builder()
                 .id(idim)
