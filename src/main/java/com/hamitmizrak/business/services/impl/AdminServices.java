@@ -3,7 +3,9 @@ package com.hamitmizrak.business.services.impl;
 
 import com.hamitmizrak.business.dto.AdminDto;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -164,6 +166,38 @@ public class AdminServices {
                 .password("Şifre44")
                 .build();
         return adminDto;
+    }
+
+    ///////////////////////////////////////////////////
+    //ResponseEntity.ok(adminDto): en sık kullanılan
+    //http://localhost:8080/api/v1/rest/object12
+    @GetMapping("/rest/object12")
+    public ResponseEntity<AdminDto>  getRest12(){
+        AdminDto adminDto=AdminDto
+                .builder()
+                .name("adı")
+                .surname("soyadı")
+                .password("44")
+                .build();
+        return ResponseEntity.ok(adminDto);
+    }
+
+
+    //http://localhost:8080/api/v1/rest/object13
+    @GetMapping("/rest/object13")
+    public ResponseEntity<AdminDto>  getRest13(){
+        AdminDto adminDto=AdminDto
+                .builder()
+                .name("adı")
+                .surname("soyadı")
+                .password("44")
+                .build();
+
+       // return new ResponseEntity<>(adminDto, HttpStatus.OK);
+       // return  ResponseEntity.status(HttpStatus.OK).body(adminDto);
+       // return  ResponseEntity.status(200).body(adminDto);
+       // return  ResponseEntity.ok().body(adminDto);
+       return ResponseEntity.ok(adminDto);
     }
 
 }
