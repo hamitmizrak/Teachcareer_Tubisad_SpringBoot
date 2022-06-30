@@ -1,4 +1,4 @@
-package com.hamitmizrak.business.dto;
+package com.hamitmizrak.flower;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,4 +24,10 @@ public class FlowerDto {
 
     @NotEmpty(message = "çiçek fiyatını girmediniz")
     private String flowerPrice;
+
+    //1-) DTO
+    //2-) Entity
+    //3-) Repository
+    //4-) Controller
+    //5-) Html
 }

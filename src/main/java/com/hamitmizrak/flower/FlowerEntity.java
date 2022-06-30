@@ -1,5 +1,6 @@
-package com.hamitmizrak.data.entity;
+package com.hamitmizrak.flower;
 
+import com.hamitmizrak.data.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

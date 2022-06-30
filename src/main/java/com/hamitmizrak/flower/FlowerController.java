@@ -1,8 +1,8 @@
-package com.hamitmizrak.ui.mvc;
+package com.hamitmizrak.flower;
 
-import com.hamitmizrak.data.entity.FlowerEntity;
-import com.hamitmizrak.data.repository.IFlowerRepository;
-import com.hamitmizrak.business.dto.FlowerDto;
+import com.hamitmizrak.flower.FlowerEntity;
+import com.hamitmizrak.flower.IFlowerRepository;
+import com.hamitmizrak.flower.FlowerDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
-package com.hamitmizrak.data.repository;
+package com.hamitmizrak.flower;
 
-import com.hamitmizrak.data.entity.FlowerEntity;
+import com.hamitmizrak.flower.FlowerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
