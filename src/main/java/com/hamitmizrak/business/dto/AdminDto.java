@@ -14,8 +14,9 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 
 public class AdminDto {
-    private int id;
+    private Long id;
     private String name;
     private String surname;
     private String password;
+
 }

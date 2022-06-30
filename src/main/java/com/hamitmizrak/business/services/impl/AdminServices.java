@@ -2,14 +2,17 @@ package com.hamitmizrak.business.services.impl;
 
 
 import com.hamitmizrak.business.dto.AdminDto;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1")
-public class ComputerServices {
+@Log4j2
+public class AdminServices {
 
     //http://localhost:8080/api/v1/rest/manuelJson
     @GetMapping("/rest/manuelJson")
@@ -41,6 +44,40 @@ public class ComputerServices {
     @GetMapping(value = "/rest/object4",produces ="application/json")
     public AdminDto getRest4(){
         AdminDto adminDto=AdminDto.builder().name("adı4").surname("soyadı4").password("44").build();
+        return adminDto;
+    }
+
+    //http://localhost:8080/api/v1/rest/object5/44
+    //Path Variable
+    @GetMapping(value = "/rest/object5/{id}")
+    public AdminDto getRest5(@PathVariable(name="id") Long idim){
+        AdminDto adminDto=AdminDto
+                .builder().id(idim)
+                .name("adı44")
+                .surname("soyadı44")
+                .password("Şifre44")
+                .build();
+        return adminDto;
+    }
+
+
+    //http://localhost:8080/api/v1/rest/object6
+    //http://localhost:8080/api/v1/rest/object6/55
+    //Path Variable
+    @GetMapping(value = {"/rest/object6","/rest/object6/{id}"})
+    public AdminDto getRest6(@PathVariable(name="id",required = false) Long idim){
+        AdminDto adminDto = null;
+        if(idim==null){
+           log.error("id girilmedi");
+        }else{
+            adminDto =AdminDto
+                    .builder()
+                    .id(idim)
+                    .name("adı44")
+                    .surname("soyadı44")
+                    .password("Şifre44")
+                    .build();
+        }
         return adminDto;
     }
 
