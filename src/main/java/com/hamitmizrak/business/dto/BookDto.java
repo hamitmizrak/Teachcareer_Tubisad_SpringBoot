@@ -1,4 +1,4 @@
-package com.hamitmizrak.ui.rest;
+package com.hamitmizrak.business.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
