@@ -24,6 +24,7 @@ public class BookController {
 
         HttpEntity<String> entity=new HttpEntity<String>("other",httpHeaders);
         ResponseEntity<String> response=restTemplate.exchange(URL, HttpMethod.GET,entity,String.class);
+
         String body=response.getBody();
         return body;
     }

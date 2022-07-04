@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 public class BookRestController {
 
+    //@Controller gelen Header verisi almak
     //http://localhost:8080/book/restcontroller
     @GetMapping("restcontroller")
     public ResponseEntity<?>  headerBook(@RequestHeader(value = "key_header",defaultValue = "yedek data") String data){
