@@ -12,7 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-public class MyUserLogin {
+public class MyUserLoginController {
+
+    //http://localhost:8080/security/public
+    @GetMapping("security/public")
+    public String publicData(){
+        return "index";
+    }
+
+
+    //http://localhost:8080/security/secret
+    @GetMapping("security/secret")
+    public String secretData(){
+        return "secret";
+    }
 
     // http://localhost:8080/login
     // http://localhost:8080/login?error

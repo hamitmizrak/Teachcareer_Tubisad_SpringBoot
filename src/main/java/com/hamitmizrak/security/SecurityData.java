@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
+//CSRF:Cross Site Request Forgency (Web siteler arasında istek Sahteciliği)
 @EnableWebSecurity
 public class SecurityData  extends WebSecurityConfigurerAdapter {
 
@@ -15,9 +15,13 @@ public class SecurityData  extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
    http
            .authorizeRequests()
-           .antMatchers("/","/security/public","/login","/index").permitAll()
-           .anyRequest().authenticated()
-           .and().formLogin().loginPage("/login");
+           .antMatchers("/","/security/public","/login","/index")
+           .permitAll()
+           .anyRequest()
+           .authenticated()
+           .and()
+           .formLogin()
+           .loginPage("/login");
   }
 
   @Autowired
