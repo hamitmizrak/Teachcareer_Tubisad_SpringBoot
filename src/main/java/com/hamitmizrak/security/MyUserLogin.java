@@ -17,7 +17,7 @@ public class MyUserLogin {
     // http://localhost:8080/login
     // http://localhost:8080/login?error
     @GetMapping("/login")
-    public String getLogin(@RequestParam(value = "login", required = false) String error, Model model) {
+    public String getLogin(@RequestParam(value = "error", required = false) String error, Model model) {
         if (error != null) {
             model.addAttribute("login_key", "Kullanıcı adı veya şifreniz yanlış");
         } else {
