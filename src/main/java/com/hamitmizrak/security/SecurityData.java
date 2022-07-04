@@ -11,12 +11,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityData  extends WebSecurityConfigurerAdapter {
 
-  @Override
+ @Override
   protected void configure(HttpSecurity http) throws Exception {
    http
            .authorizeRequests()
-           .antMatchers("/","/security/public").permitAll()
-           .anyRequest().authenticated();
+           .antMatchers("/","/security/public","/login","/index").permitAll()
+           .anyRequest().authenticated()
+           .and().formLogin().loginPage("/login");
   }
 
   @Autowired
@@ -27,10 +28,7 @@ public class SecurityData  extends WebSecurityConfigurerAdapter {
               .withUser("root")
               //.password("{noop}root")
               .password(encoder.encode("root"))
-              .roles("USER")
-              .and()
-              .withUser("root2")
-              .password(encoder.encode("root2"));
+              .roles("USER");
     }
 
 }
