@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<title>CORS</title>
+<link rel="icon" href="images/favicon.jpg" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="html5,css3,js,jquery,bootstrap,react,es5,es6" />
+
+<!-- Bootstrap CSS v5.0.2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+<!-- jquery UI -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body class="container bg-dark text-white">
+      <!-- start codes -->
+
+      <p class="text-center text-primary text-uppercase mb-5 mt-5">MErhabalar Cors</p>
+      <p class="text-center text-warning text-uppercase mb-5 mt-5" id="cors_id"></p>
+
+      <script>
+
+            $(document).ready(function () {
+                  const url = "http://localhost:8080/cors/get/message";
+                  $.get(url, function (data, status) {
+                        console.log(data)
+                        $("#cors_id").html("<b>" + data + " </b>")
+                  })
+            });
+      </script>
+
+      <!-- ends codes -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
