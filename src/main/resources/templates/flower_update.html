@@ -76,7 +76,7 @@
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form th:action="@{/flower/form}" method="post" th:object="${flower_save}">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                        <p class="lead fw-normal mb-0 me-3">Flower Sign in with</p>
+                        <p class="lead fw-normal mb-0 me-3">Update</p>
                         <button type="button" class="btn btn-primary btn-floating mx-1">
                             <i class="fab fa-facebook-f"></i>
                         </button>
@@ -96,6 +96,7 @@
 
                     <!-- Flower Name -->
                     <div class="form-outline mb-4">
+                        <input type="hidden"  id="id" th:field="*{id}" />
                         <input type="text" class="form-control form-control-lg"  placeholder="Çiçek adı" id="flowerName" th:field="*{flowerName}" />
                         <label th:if="${#fields.hasErrors('flowerName')}" th:errors="*{flowerName}"  class="form-label text-danger" >Çiçek adı</label>
                     </div>
@@ -112,24 +113,9 @@
                         <label th:if="${#fields.hasErrors('flowerPrice')}" th:errors="*{flowerPrice}" class="form-label text-danger" >Çiçek Fiyatı</label>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3"/>
-                            <label class="form-check-label" for="form2Example3">
-                                Remember me
-                            </label>
-                        </div>
-                        <a href="#!" class="text-body">Forgot password?</a>
-                    </div>
-
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <input type="submit" class="btn btn-primary btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Gönder">
-                        <a href="/flower/list" class="btn btn-warning btn-lg">LIST</a>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                                                                                          class="link-danger">Register</a>
-                        </p>
                     </div>
 
                 </form>

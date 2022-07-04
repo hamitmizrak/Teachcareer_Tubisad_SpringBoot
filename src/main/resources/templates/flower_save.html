@@ -96,6 +96,7 @@
 
                     <!-- Flower Name -->
                     <div class="form-outline mb-4">
+                        <input type="text"  id="id" th:field="*{id}" />
                         <input type="text" class="form-control form-control-lg"  placeholder="Çiçek adı" id="flowerName" th:field="*{flowerName}" />
                         <label th:if="${#fields.hasErrors('flowerName')}" th:errors="*{flowerName}"  class="form-label text-danger" >Çiçek adı</label>
                     </div>

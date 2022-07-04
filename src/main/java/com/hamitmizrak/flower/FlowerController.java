@@ -96,20 +96,20 @@ public class FlowerController {
         return "redirect:/flower/list";
     }
 
+
+
+
     //update
     //http://localhost:8080/update/flower/2
-    @GetMapping("update/flower/{id}")
-    public String updateFlowerById(@PathVariable(name="id") Long id,FlowerDto flowerDto){
+    @PostMapping("update/flower/{id}")
+    public String postUpdate(@PathVariable(name="id") Long id,Model model){
         Optional<FlowerEntity>  optionalEntity=  repository.findById(id);
-        if(optionalEntity.isPresent()){
-            FlowerEntity entity=optionalEntity.get();
-            entity.setFlowerName(flowerDto.getFlowerName());
-            entity.setFlowerType(flowerDto.getFlowerType());
-            entity.setFlowerPrice(flowerDto.getFlowerPrice());
-            repository.save(entity);
-            log.info("bulundu ve güncellendi:  "+entity);
-        }
-        return "flower_update";
+        System.out.println("id: "+id);
+
+            model.addAttribute("flower_save",optionalEntity);
+            log.info("bulundu ve güncellendi:  "+optionalEntity);
+
+        return "redirect:/flower/list";
     }
 
 

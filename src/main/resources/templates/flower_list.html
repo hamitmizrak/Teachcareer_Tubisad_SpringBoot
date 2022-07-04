@@ -82,14 +82,8 @@
                         <!-- <a th:onclick="if(!(confirm('Silmek istediğinden emin misin ?'))) return false"-->
                         <a
                             th:href="@{/delete/flower/{id}(id=${flower.id})}"
-                            th:onclick="if(!(confirm('Silmek istediğinden emin misin ?'))) return false"
-
-                            th:onmouseout="swal('Are you sure you want to do this?',
-
-                            { buttons: ['Evet!', true],});
-                        "
-
-                    ><i class="fa-regular fa-trash-can text-danger"></i></a></td>
+                            th:onclick="if(!(confirm('Silmek istediğinden emin misin ?'))) return false">
+                            <i class="fa-regular fa-trash-can text-danger"></i></a></td>
 
                 </tr>
                 </tbody>
